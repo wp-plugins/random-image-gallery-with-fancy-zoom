@@ -5,7 +5,7 @@ Plugin Name: Random image gallery with fancy zoom
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Description: This plug-in which allows you to simply and easily show random image anywhere in your template files or using widgets with onclick JQuery fancy zoom effect. 
 Author: Gopi.R
-Version: 8.0
+Version: 8.1
 Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Donate link: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 License: GPLv2 or later
@@ -17,14 +17,19 @@ function rigwfz_show()
 	global $rigwfzload;
 	
 	$mainsiteurl =	get_option('siteurl') . "/wp-content/plugins/random-image-gallery-with-fancy-zoom/ressources/";
-	?>
-	<script type="text/javascript">
-	$(function(){
-		$.fn.fancyzoom.defaultsOptions.imgDir='<?php echo $mainsiteurl; ?>';
-		$('#nooverlay').fancyzoom({Speed:400,showoverlay:false});
-	});
-	</script>
-	<?php
+	global $ScriptInserted;
+	if (!isset($ScriptInserted) || $ScriptInserted !== true)
+	{
+		$ScriptInserted = true;
+		?>
+		<script type="text/javascript">
+		jQuery(function(){
+			jQuery.fn.fancyzoom.defaultsOptions.imgDir='<?php echo $mainsiteurl; ?>';
+			jQuery('#nooverlay').fancyzoom({Speed:400,showoverlay:false});
+		});
+		</script>
+		<?php
+	}
 	include_once("select-random-image.php");
 }
 
@@ -84,12 +89,17 @@ function rigwfz_shortcode( $atts )
 	
 	$myrand = rand(1, 15);
 	
-	$rigwfz = $rigwfz . ' <script type="text/javascript"> ';
-	$rigwfz = $rigwfz . ' $(function(){ ';
-	$rigwfz = $rigwfz . " $.fn.fancyzoom.defaultsOptions.imgDir='".$mainsiteurl."ressources/';";
-	$rigwfz = $rigwfz . " $('#nooverlay".$myrand."').fancyzoom({Speed:400,showoverlay:false}); ";
-	$rigwfz = $rigwfz . ' }); ';
-	$rigwfz = $rigwfz . ' </script> ';
+	global $ScriptInserted;
+	if (!isset($ScriptInserted) || $ScriptInserted !== true)
+	{
+		$ScriptInserted = true;
+		$rigwfz = $rigwfz . ' <script type="text/javascript"> ';
+		$rigwfz = $rigwfz . ' jQuery(function(){ ';
+		$rigwfz = $rigwfz . " jQuery.fn.fancyzoom.defaultsOptions.imgDir='".$mainsiteurl."ressources/';";
+		$rigwfz = $rigwfz . " jQuery('#nooverlay".$myrand."').fancyzoom({Speed:400,showoverlay:false}); ";
+		$rigwfz = $rigwfz . ' }); ';
+		$rigwfz = $rigwfz . ' </script> ';
+	}
 	
 	$rigwfz = $rigwfz . '<div>';
 	$rigwfz = $rigwfz . '<a href="'.$rigwfz_siteurl . $image .'" id="nooverlay'.$myrand.'">';
@@ -164,7 +174,7 @@ function rigwfz_admin_option()
 	<br />
     <strong>Drag and drop the widget</strong>
 	<ul>
-	<li>Go to widget menu and drag and drop the "R I G W F Z" widget to your sidebar location.</li>
+		<li>Go to widget menu and drag and drop the "R I G W F Z" widget to your sidebar location.</li>
 	</ul>
     <strong>Paste the below php code to your php file</strong>
     <div style="padding-top:17px;padding-bottom:17px;">
@@ -173,7 +183,7 @@ function rigwfz_admin_option()
     </code></div>
     <strong>Short code to add images into posts and pages</strong>
 	<ul>
-	<li>Check official website for more info <a target="_blank" href='http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/'>Click here</a></li>
+		<li>Check official website for more information <a target="_blank" href='http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/'>Click here</a></li>
     </ul>
 	<?php
 	echo "</div>";
@@ -219,7 +229,7 @@ function rigwfz_add_javascript_files()
 {
 	if (!is_admin())
 	{
-		wp_enqueue_script( 'jquery 1.7.2', get_option('siteurl').'/wp-content/plugins/random-image-gallery-with-fancy-zoom/js/jquery.js');
+		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'jquery.fancyzoom.min', get_option('siteurl').'/wp-content/plugins/random-image-gallery-with-fancy-zoom/js/jquery.fancyzoom.min.js');
 	}	
 }
