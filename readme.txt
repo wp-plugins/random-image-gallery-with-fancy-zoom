@@ -4,9 +4,9 @@ Donate link: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-f
 Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Tags: Random, image, gallery, fancy, zoom
-Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 8.1
+Requires at least: 3.4
+Tested up to: 3.6
+Stable tag: 9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -119,6 +119,10 @@ Tested up to WordPress 3.5
 Avoid registering the alternate jQuery.
 From this version we are using existing wordpress jQuery.
 
+= 9.0 =
+
+Tested up to 3.6
+
 == Changelog ==
 
 = 1.0 =
@@ -162,3 +166,7 @@ New demo link, http://www.gopiplus.com
 Tested up to WordPress 3.5
 Avoid registering the alternate jQuery.
 From this version we are using existing wordpress jQuery.
+
+= 9.0 =
+
+Tested up to 3.6
