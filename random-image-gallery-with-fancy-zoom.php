@@ -5,7 +5,7 @@ Plugin Name: Random image gallery with fancy zoom
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Description: This plug-in which allows you to simply and easily show random image anywhere in your template files or using widgets with onclick JQuery fancy zoom effect. 
 Author: Gopi.R
-Version: 9.0
+Version: 9.1
 Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Donate link: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 License: GPLv2 or later
@@ -15,7 +15,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 function rigwfz_show() 
 {
 	global $rigwfzload;
-	
 	$mainsiteurl =	get_option('siteurl') . "/wp-content/plugins/random-image-gallery-with-fancy-zoom/ressources/";
 	global $ScriptInserted;
 	if (!isset($ScriptInserted) || $ScriptInserted !== true)
@@ -35,7 +34,7 @@ function rigwfz_show()
 
 function rigwfz_install() 
 {
-	add_option('rigwfz_title', "Slideshow Fancyzoom");
+	add_option('rigwfz_title', "Image with fancy zoom");
 	add_option('rigwfz_width', "180");
 	add_option('rigwfz_dir', "wp-content/plugins/random-image-gallery-with-fancy-zoom/random-gallery/");
 	add_option('rigwfz_title_yes', "YES");
@@ -63,11 +62,14 @@ function rigwfz_shortcode( $atts )
 	$imgs = dir($img_folder);
 	
 	//read all files from the  directory, checks if are images and ads them to a list (see below how to display flash banners)
-	while ($file = $imgs->read()) {
-	if (eregi("gif", $file) || eregi("jpg", $file) || eregi("png", $file))
-	$imglist .= "$file ";
-	
-	} closedir($imgs->handle);
+	while ($file = $imgs->read()) 
+	{
+		if(strpos(strtoupper($file), '.JPG') > 0 or strpos(strtoupper($file), '.GIF') >0 or strpos(strtoupper($file), '.GIF') > 0 )
+		{
+			$imglist .= "$file ";
+		}
+	} 
+	closedir($imgs->handle);
 	
 	//put all images into an array
 	$imglist = explode(" ", $imglist);
@@ -76,7 +78,6 @@ function rigwfz_shortcode( $atts )
 	//generate a random number between 0 and the number of images
 	$random = mt_rand(0, $no);
 	$image = $imglist[$random];
-	
 	$mainsiteurl =	get_option('siteurl') . "/wp-content/plugins/random-image-gallery-with-fancy-zoom/";
 	
 	$rigwfz_width =	get_option('rigwfz_width');
@@ -84,11 +85,8 @@ function rigwfz_shortcode( $atts )
 	{
 		$rigwfz_width = 180;
 	} 
-	
 	$rigwfz = "";
-	
 	$myrand = rand(1, 15);
-	
 	global $ScriptInserted;
 	if (!isset($ScriptInserted) || $ScriptInserted !== true)
 	{
@@ -112,16 +110,13 @@ function rigwfz_shortcode( $atts )
 function rigwfz_widget($args) 
 {
 	extract($args);
-	
 	if(get_option('rigwfz_title_yes') == "YES") 
 	{
 		echo $before_widget . $before_title;
 		echo get_option('rigwfz_title');
 		echo $after_title;
 	}
-	
 	rigwfz_show();
-	
 	if(get_option('rigwfz_title_yes') == "YES") 
 	{
 		echo $after_widget;
@@ -130,70 +125,77 @@ function rigwfz_widget($args)
 
 function rigwfz_admin_option() 
 {
-	
-	echo "<div class='wrap'>";
-	echo "<h2>"; 
-	echo "Random image gallery with fancy zoom (R I G W F Z)";
-	echo "</h2>";
-    
-	$rigwfz_title = get_option('rigwfz_title');
-	$rigwfz_width = get_option('rigwfz_width');
-	$rigwfz_dir = get_option('rigwfz_dir');
-	$rigwfz_title_yes = get_option('rigwfz_title_yes');
-	
-	if (@$_POST['rigwfz_submit']) 
-	{
-		$rigwfz_title = stripslashes($_POST['rigwfz_title']);
-		$rigwfz_width = stripslashes($_POST['rigwfz_width']);
-		$rigwfz_dir = stripslashes($_POST['rigwfz_dir']);
-		$rigwfz_title_yes = stripslashes($_POST['rigwfz_title_yes']);
-		
-		update_option('rigwfz_title', $rigwfz_title );
-		update_option('rigwfz_width', $rigwfz_width );
-		update_option('rigwfz_dir', $rigwfz_dir );
-		update_option('rigwfz_title_yes', $rigwfz_title_yes );
-	}
 	?>
-	<form name="form_hsa" method="post" action="">
-	<table width="100%" border="0" cellspacing="0" cellpadding="3"><tr><td align="left">
+	<div class="wrap">
+		<div class="form-wrap">
+			<div id="icon-edit" class="icon32 icon32-posts-post"></div>
+			<h2>Random image gallery with fancy zoom</h2>
+			<h3>Settings</h3>
+			<?php
+			$rigwfz_title = get_option('rigwfz_title');
+			$rigwfz_width = get_option('rigwfz_width');
+			$rigwfz_dir = get_option('rigwfz_dir');
+			$rigwfz_title_yes = get_option('rigwfz_title_yes');		
+			if (isset($_POST['rigwfz_form_submit']) && $_POST['rigwfz_form_submit'] == 'yes')
+			{
+				check_admin_referer('rigwfz_form_setting');	
+				$rigwfz_title = stripslashes($_POST['rigwfz_title']);
+				$rigwfz_width = stripslashes($_POST['rigwfz_width']);
+				$rigwfz_dir = stripslashes($_POST['rigwfz_dir']);
+				$rigwfz_title_yes = stripslashes($_POST['rigwfz_title_yes']);
+				update_option('rigwfz_title', $rigwfz_title );
+				update_option('rigwfz_width', $rigwfz_width );
+				update_option('rigwfz_dir', $rigwfz_dir );
+				update_option('rigwfz_title_yes', $rigwfz_title_yes );	
+				?>
+				<div class="updated fade">
+					<p><strong>Details successfully updated.</strong></p>
+				</div>
+				<?php
+			}
+			?>
+			<form name="rigwfz_form" method="post" action="">
+			
+			<label for="tag-title">Enter widget title</label>
+			<input name="rigwfz_title" id="rigwfz_title" type="text" value="<?php echo $rigwfz_title; ?>" size="50" maxlength="150" />
+			<p>Please enter your widget title.</p>
+			
+			<label for="tag-title">Width</label>
+			<input name="rigwfz_width" id="rigwfz_width" type="text" value="<?php echo $rigwfz_width; ?>" maxlength="3" />
+			<p>Please enter your image width.</p>
+			
+			<label for="tag-title">Sidebar title display</label>
+			<select name="rigwfz_title_yes" id="rigwfz_title_yes">
+				<option value='YES'  <?php if($rigwfz_title_yes == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
+				<option value='NO' <?php if($rigwfz_title_yes == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
+			</select>
+			<p>Do you want to show title on your sidebar? This option is only for widget.</p>
+			
+			<label for="tag-title">Image directory</label>
+			<input name="rigwfz_dir" id="rigwfz_dir" type="text" value="<?php echo $rigwfz_dir; ?>" size="100" maxlength="150" />
+			<p>Please enter your image directory. In which directory you have all your images?</p>
+			
+			<p style="padding-top:8px;">
+				<input name="rigwfz_submit" id="rigwfz_submit" class="button" value="Submit" type="submit" />
+				<input type="hidden" name="rigwfz_form_submit" value="yes"/>
+				<?php wp_nonce_field('rigwfz_form_setting'); ?>
+			</p>
+			</form>
+		</div>
+		<h3>Plugin configuration option</h3>
+		<ol>
+			<li>Add directly in to the theme using PHP code.</li>
+			<li>Drag and drop the widget to your sidebar.</li>
+			<li>Add the images in the posts or pages using short code.</li>
+		</ol>
+		<p class="description">Check official website for more information <a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/">click here</a></p>
+	</div>
 	<?php
-	echo '<p>Title:<br><input  style="width: 450px;" maxlength="200" type="text" value="';
-	echo $rigwfz_title . '" name="rigwfz_title" id="rigwfz_title" /></p>';
-	echo '<p>Width:<br><input  style="width: 250px;" maxlength="3" type="text" value="';
-	echo $rigwfz_width . '" name="rigwfz_width" id="rigwfz_width" />(Only Number)</p>';
-	echo '<p>Display Sidebar Title:<br><input maxlength="3" style="width: 250px;" type="text" value="';
-	echo $rigwfz_title_yes . '" name="rigwfz_title_yes" id="rigwfz_title_yes" />(YES/NO)</p>';
-	echo '<p>Image directory:<br><input  style="width: 550px;" type="text" value="';
-	echo $rigwfz_dir . '" name="rigwfz_dir" id="rigwfz_dir" /></p>';
-	echo '<p>Default Image directory: wp-content/plugins/random-image-gallery-with-fancy-zoom/random-gallery/<br><br>';
-	echo "Note: Don't upload your original images into this default folder, instead you change this default path to original path.</p>";
-	echo '<input name="rigwfz_submit" id="rigwfz_submit" class="button-primary" value="Submit" type="submit" />';
-	?>
-	</td><td align="center" valign="middle"> </td></tr></table>
-	</form>
-	<br />
-    <strong>Drag and drop the widget</strong>
-	<ul>
-		<li>Go to widget menu and drag and drop the "R I G W F Z" widget to your sidebar location.</li>
-	</ul>
-    <strong>Paste the below php code to your php file</strong>
-    <div style="padding-top:17px;padding-bottom:17px;">
-    <code style="padding:7px;">
-    &lt;?php if (function_exists (rigwfz_show)) rigwfz_show(); ?&gt;
-    </code></div>
-    <strong>Short code to add images into posts and pages</strong>
-	<ul>
-		<li>Check official website for more information <a target="_blank" href='http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/'>Click here</a></li>
-    </ul>
-	<?php
-	echo "</div>";
 }
 
 function rigwfz_control()
 {
-	echo '<p>Random image gallery with fancy zoom. to change the setting goto R I G W F Z link under setting menu.';
-	echo ' <a href="options-general.php?page=random-image-gallery-with-fancy-zoom/random-image-gallery-with-fancy-zoom.php">';
-	echo 'click here</a></p>';
+	echo '<p>Random image gallery with fancy zoom. To update settings <a href="options-general.php?page=random-image-gallery-with-fancy-zoom">click here</a>';
 }
 
 function rigwfz_widget_init() 
@@ -221,7 +223,7 @@ function rigwfz_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page('Random image gallery with fancy zoom - R I G W F Z', 'R I G W F Z', 'manage_options', __FILE__, 'rigwfz_admin_option' );
+		add_options_page('Random image gallery with fancy zoom - R I G W F Z', 'FancyZoom images', 'manage_options', 'random-image-gallery-with-fancy-zoom', 'rigwfz_admin_option' );
 	}
 }
 

@@ -35,11 +35,14 @@ mt_srand((double)microtime()*1000);
 $imgs = dir($img_folder);
 
 //read all files from the  directory, checks if are images and ads them to a list (see below how to display flash banners)
-while ($file = $imgs->read()) {
-if (eregi("gif", $file) || eregi("jpg", $file) || eregi("png", $file))
-$imglist .= "$file ";
-
-} closedir($imgs->handle);
+while ($file = $imgs->read()) 
+{
+	if(strpos(strtoupper($file), '.JPG') > 0 or strpos(strtoupper($file), '.GIF') >0 or strpos(strtoupper($file), '.GIF') > 0 )
+	{
+		$imglist .= "$file ";
+	}
+} 
+closedir($imgs->handle);
 
 //put all images into an array
 $imglist = explode(" ", $imglist);

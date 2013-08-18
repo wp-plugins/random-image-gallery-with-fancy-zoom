@@ -6,7 +6,7 @@ Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fa
 Tags: Random, image, gallery, fancy, zoom
 Requires at least: 3.4
 Tested up to: 3.6
-Stable tag: 9.0
+Stable tag: 9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -123,6 +123,11 @@ From this version we are using existing wordpress jQuery.
 
 Tested up to 3.6
 
+= 9.1 =
+
+Small change in the admin layout.
+Added some security feature.
+
 == Changelog ==
 
 = 1.0 =
@@ -170,3 +175,8 @@ From this version we are using existing wordpress jQuery.
 = 9.0 =
 
 Tested up to 3.6
+
+= 9.1 =
+
+Small change in the admin layout.
+Added some security feature.
