@@ -2,7 +2,7 @@
 
 /**
  *     Random image gallery with fancy zoom
- *     Copyright (C) 2011 - 2013 www.gopiplus.com
+ *     Copyright (C) 2011 - 2014 www.gopiplus.com
  *     http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
  * 
  *     This program is free software: you can redistribute it and/or modify
@@ -31,6 +31,11 @@ $img_folder = $rigwfz_dir;
 
 mt_srand((double)microtime()*1000);
 
+if(!is_dir($img_folder))
+{
+	_e('Image folder does not exists', 'random-image-gallery');
+	return true;
+}
 //use the directory class
 $imgs = dir($img_folder);
 
@@ -48,22 +53,29 @@ closedir($imgs->handle);
 $imglist = explode(" ", $imglist);
 $no = sizeof($imglist)-2;
 
-//generate a random number between 0 and the number of images
-$random = mt_rand(0, $no);
-$image = $imglist[$random];
-
-$mainsiteurl =	get_option('siteurl') . "/wp-content/plugins/random-image-gallery-with-fancy-zoom/";
-
-$rigwfz_width =	get_option('rigwfz_width');
-if(!is_numeric($rigwfz_width))
+if($no >= 0)
 {
-	$rigwfz_width = 180;
-} 
-
-//display image
-echo '<div>';
-echo '<a href="'.$rigwfz_siteurl . $image .'" id="nooverlay">';
-echo '<img src="'.$mainsiteurl.'crop-random-image.php?AC=YES&DIR='.$rigwfz_dir.'&IMGNAME='.$image.'&MAXWIDTH='.$rigwfz_width.'"> ';
-echo '</a>';
-echo '</div>';
+	//generate a random number between 0 and the number of images
+	$random = mt_rand(0, $no);
+	$image = $imglist[$random];
+	
+	$mainsiteurl =	get_option('siteurl') . "/wp-content/plugins/random-image-gallery-with-fancy-zoom/";
+	
+	$rigwfz_width =	get_option('rigwfz_width');
+	if(!is_numeric($rigwfz_width))
+	{
+		$rigwfz_width = 180;
+	} 
+	
+	//display image
+	echo '<div>';
+	echo '<a href="'.$rigwfz_siteurl . $image .'" id="nooverlay">';
+	echo '<img src="'.$mainsiteurl.'crop-random-image.php?AC=YES&DIR='.$rigwfz_dir.'&IMGNAME='.$image.'&MAXWIDTH='.$rigwfz_width.'"> ';
+	echo '</a>';
+	echo '</div>';
+}
+else
+{
+	_e('No image found in the folder', 'random-image-gallery');
+}
  ?>

@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fa
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Tags: Random, image, gallery, fancy, zoom
 Requires at least: 3.4
-Tested up to: 3.6
-Stable tag: 9.1
+Tested up to: 3.8
+Stable tag: 9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -23,13 +23,29 @@ About author : [About author](http://www.gopiplus.com/work/)
 
 The Random image gallery with fancy zoom plug-in which allows you to simply and easily show random image any where in your template files or using widgets with on-click fancy zoom effect. You can upload the original images directly into the folder or you can set the existing image folder location; this plugin will automatically generate the perfect thumbnail image based on the mentioned width.This plugin is very useful to showcase images randomly to user. Best practice is don't use the default image location to store your images.
 
-**Plugin configuration**
+Plugin configuration
 
-* Drag and drop the widget
+Method 1
 
-* Paste the php code to your php file
-		
+Drag and Drop the Widget : Go to widget page under Appearance tab, Drag and drop R I G W F Z widget into your side bar. its very easy.
+
+Method 2
+
+Add directly in the theme : Use the PHP code to add the gallery to your Theme files.
+
 <code><?php if (function_exists (rigwfz_show)) rigwfz_show(); ?></code>
+
+Method 3
+
+Short code for posts and pages: Copy and paste the given short code into pages or posts.
+
+Short code from the version 1.0 to version 6.0
+
+[RIGWFZ]
+
+Short code from the version 7.0 onwards
+
+[random-fanzy-zoom
 
 **Features of this plugin**   	
 
@@ -38,9 +54,6 @@ The Random image gallery with fancy zoom plug-in which allows you to simply and 
 * Display one image on random order.
 * Fancy zoom effect on mouse click.
 
-
-**To Update the Scrolling setting:**   
-Go to 'R I G W F Z' link under SETTINGS TAB. 		
 
 Live demo : [Live demo](http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/)		 	
 More information : [More information](http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/)			 		
@@ -57,7 +70,7 @@ About author : [About author](http://www.gopiplus.com/work/)
 
 **Q1. Plugin setting link?**
 
-Dashboard --> Setting --> R I G W F Z
+Dashboard --> Setting --> FancyZoom images
 
 **Q2. Thumbnail not display?**
 
@@ -69,11 +82,11 @@ Dashboard --> Setting --> R I G W F Z
 
 == Screenshots ==
 
-1. Admin setting page. http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
+1. Front end without light box. http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 
-2. Front end without light box. http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
+2. Front end with light box. http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 
-3. Front end with light box. http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
+3. Admin setting page. http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 
 == Upgrade Notice ==
 
@@ -128,6 +141,12 @@ Tested up to 3.6
 Small change in the admin layout.
 Added some security feature.
 
+= 9.2 =	 
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (random-image-gallery.po) available in the languages folder.
+
 == Changelog ==
 
 = 1.0 =
@@ -180,3 +199,9 @@ Tested up to 3.6
 
 Small change in the admin layout.
 Added some security feature.
+
+= 9.2 =	 
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (random-image-gallery.po) available in the languages folder.
