@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fa
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Tags: Random, image, gallery, fancy, zoom
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 9.2
+Tested up to: 3.9
+Stable tag: 9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -27,13 +27,13 @@ Plugin configuration
 
 Method 1
 
-Drag and Drop the Widget : Go to widget page under Appearance tab, Drag and drop R I G W F Z widget into your side bar. its very easy.
+Drag and Drop the Widget : Go to widget page under Appearance tab, Drag and drop FancyZoom images widget into your side bar. its very easy.
 
 Method 2
 
 Add directly in the theme : Use the PHP code to add the gallery to your Theme files.
 
-<code><?php if (function_exists (rigwfz_show)) rigwfz_show(); ?></code>
+<code><?php rigwfz_show(); ?></code>
 
 Method 3
 
@@ -41,11 +41,11 @@ Short code for posts and pages: Copy and paste the given short code into pages o
 
 Short code from the version 1.0 to version 6.0
 
-[RIGWFZ]
+<code>[RIGWFZ]</code>
 
 Short code from the version 7.0 onwards
 
-[random-fanzy-zoom
+<code>[random-fanzy-zoom]</code>
 
 **Features of this plugin**   	
 
@@ -53,12 +53,6 @@ Short code from the version 7.0 onwards
 * This will create thumbnail image.
 * Display one image on random order.
 * Fancy zoom effect on mouse click.
-
-
-Live demo : [Live demo](http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/)		 	
-More information : [More information](http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/)			 		
-User comments and suggestion : [User comments and suggestion](http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/)			 	
-About author : [About author](http://www.gopiplus.com/work/) 
 
 == Installation ==
 
@@ -147,6 +141,10 @@ Added some security feature.
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (random-image-gallery.po) available in the languages folder.
 
+= 9.3 =	 
+
+1. Tested up to 3.9
+
 == Changelog ==
 
 = 1.0 =
@@ -205,3 +203,7 @@ Added some security feature.
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (random-image-gallery.po) available in the languages folder.
+
+= 9.3 =	 
+
+1. Tested up to 3.9
