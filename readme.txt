@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fa
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Tags: Random, image, gallery, fancy, zoom
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 9.3
+Tested up to: 4.0
+Stable tag: 9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -21,31 +21,9 @@ More information : [More information](http://www.gopiplus.com/work/2010/07/18/ra
 User comments and suggestion : [User comments and suggestion](http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/)			 	
 About author : [About author](http://www.gopiplus.com/work/) 	
 
-The Random image gallery with fancy zoom plug-in which allows you to simply and easily show random image any where in your template files or using widgets with on-click fancy zoom effect. You can upload the original images directly into the folder or you can set the existing image folder location; this plugin will automatically generate the perfect thumbnail image based on the mentioned width.This plugin is very useful to showcase images randomly to user. Best practice is don't use the default image location to store your images.
+The Random image gallery with fancy zoom plug-in which allows you to simply and easily show random image any where in your template files or using widgets with on-click fancy zoom effect. You can upload the original images directly into the folder or you can set the existing image folder location; this plugin will automatically generate the perfect thumbnail image based on the mentioned width.This plugin is very useful to showcase images randomly to user. Best practice is don’t use the default image location to store your images.
 
-Plugin configuration
-
-Method 1
-
-Drag and Drop the Widget : Go to widget page under Appearance tab, Drag and drop FancyZoom images widget into your side bar. its very easy.
-
-Method 2
-
-Add directly in the theme : Use the PHP code to add the gallery to your Theme files.
-
-<code><?php rigwfz_show(); ?></code>
-
-Method 3
-
-Short code for posts and pages: Copy and paste the given short code into pages or posts.
-
-Short code from the version 1.0 to version 6.0
-
-<code>[RIGWFZ]</code>
-
-Short code from the version 7.0 onwards
-
-<code>[random-fanzy-zoom]</code>
+What is fancy zoom script? Fancy zoom is a simple, modest script used to overlay images on the current page. click and see the demo you will get understand.
 
 **Features of this plugin**   	
 
@@ -53,6 +31,20 @@ Short code from the version 7.0 onwards
 * This will create thumbnail image.
 * Display one image on random order.
 * Fancy zoom effect on mouse click.
+
+**Plugin configuration**
+
+Method 1
+
+Drag and Drop the Widget : Go to widget page under Appearance tab, Drag and drop R I G W F Z widget into your side bar. its very easy.
+
+Method 2
+
+Add directly in the theme : Use this code `<?php if (function_exists (rigwfz_show)) rigwfz_show(); ?>` to add the gallery to your Theme files.
+
+Method 3
+
+Short code for posts and pages: Copy and paste the given short code into pages or posts. `[random-fanzy-zoom]`
 
 == Installation ==
 
@@ -63,8 +55,6 @@ Short code from the version 7.0 onwards
 == Frequently Asked Questions ==
 
 **Q1. Plugin setting link?**
-
-Dashboard --> Setting --> FancyZoom images
 
 **Q2. Thumbnail not display?**
 
@@ -145,6 +135,10 @@ Plugin *.po file (random-image-gallery.po) available in the languages folder.
 
 1. Tested up to 3.9
 
+= 9.4 =	 
+
+1. Tested up to 4.0
+
 == Changelog ==
 
 = 1.0 =
@@ -207,3 +201,7 @@ Plugin *.po file (random-image-gallery.po) available in the languages folder.
 = 9.3 =	 
 
 1. Tested up to 3.9
+
+= 9.4 =	 
+
+1. Tested up to 4.0
