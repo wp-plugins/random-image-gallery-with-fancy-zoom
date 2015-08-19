@@ -4,7 +4,7 @@ Plugin Name: Random image gallery with fancy zoom
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Description: This plug-in which allows you to simply and easily show random image anywhere in your template files or using widgets with onclick JQuery fancy zoom effect. 
 Author: Gopi Ramasamy
-Version: 9.6
+Version: 9.7
 Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Donate link: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 License: GPLv2 or later
@@ -211,7 +211,7 @@ function rigwfz_admin_option()
 function rigwfz_control()
 {
 	echo '<p><b>';
-	_e('message ticker', 'random-image-gallery');
+	_e('FancyZoom images', 'random-image-gallery');
 	echo '.</b> ';
 	_e('Check official website for more information', 'random-image-gallery');
 	?> <a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/"><?php _e('click here', 'random-image-gallery'); ?></a></p><?php
