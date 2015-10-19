@@ -1,112 +1,115 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Random image gallery with fancy zoom\n"
-"POT-Creation-Date: 2014-08-01 22:56+0800\n"
-"PO-Revision-Date: 2014-08-01 22:56+0800\n"
+"POT-Creation-Date: 2015-10-18 13:50+0800\n"
+"PO-Revision-Date: 2015-10-18 13:50+0800\n"
 "Last-Translator: \n"
-"Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
+"Language-Team: www.gopiplus.com\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../random-image-gallery-with-fancy-zoom.php:62
 #: ../select-random-image.php:36
 msgid "Image folder does not exists"
-msgstr ""
+msgstr "Folder Obrazek nie istnieje"
 
 #: ../random-image-gallery-with-fancy-zoom.php:117
 #: ../select-random-image.php:79
 msgid "No image found in the folder"
-msgstr ""
+msgstr "Nie znaleziono w folderze obrazu"
 
 #: ../random-image-gallery-with-fancy-zoom.php:144
 msgid "Random image gallery with fancy zoom"
-msgstr ""
+msgstr "Losowa galeria zdjęć z ozdobnego zoomem"
 
 #: ../random-image-gallery-with-fancy-zoom.php:145
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: ../random-image-gallery-with-fancy-zoom.php:164
 msgid "Details successfully updated."
-msgstr ""
+msgstr "Szczegóły pomyślnie zaktualizowane."
 
 #: ../random-image-gallery-with-fancy-zoom.php:171
 msgid "Enter widget title"
-msgstr ""
+msgstr "Wprowadź tytuł widget"
 
 #: ../random-image-gallery-with-fancy-zoom.php:173
 msgid "Please enter your widget title."
-msgstr ""
+msgstr "Podaj widget tytuł."
 
 #: ../random-image-gallery-with-fancy-zoom.php:175
 msgid "Width"
-msgstr ""
+msgstr "Szerokość"
 
 #: ../random-image-gallery-with-fancy-zoom.php:177
 msgid "Please enter your image width."
-msgstr ""
+msgstr "Wpisz szerokość obrazu."
 
 #: ../random-image-gallery-with-fancy-zoom.php:179
 msgid "Sidebar title display"
-msgstr ""
+msgstr "Pasek boczny wyświetlacz tytuł"
 
 #: ../random-image-gallery-with-fancy-zoom.php:184
 msgid ""
 "Do you want to show title on your sidebar? This option is only for widget."
 msgstr ""
+"Chcesz pokazać tytuł na pasku bocznym? Ta opcja jest tylko dla widgetu."
 
 #: ../random-image-gallery-with-fancy-zoom.php:186
 msgid "Image directory"
-msgstr ""
+msgstr "Szczegóły obrazu"
 
 #: ../random-image-gallery-with-fancy-zoom.php:188
 msgid ""
 "Please enter your image directory. In which directory you have all your "
 "images?"
 msgstr ""
+"Podaj swój katalog obrazu. W którym katalogu masz wszystkie swoje zdjęcia?"
 
 #: ../random-image-gallery-with-fancy-zoom.php:193
 msgid "Submit"
-msgstr ""
+msgstr "Wyślij"
 
 #: ../random-image-gallery-with-fancy-zoom.php:199
 msgid "Plugin configuration option"
-msgstr ""
+msgstr "Opcja konfiguracji plugin"
 
 #: ../random-image-gallery-with-fancy-zoom.php:201
 msgid "Add directly in to the theme using PHP code."
-msgstr ""
+msgstr "Dodaj bezpośrednio do tematu z wykorzystaniem kodu PHP."
 
 #: ../random-image-gallery-with-fancy-zoom.php:202
 msgid "Drag and drop the widget to your sidebar."
-msgstr ""
+msgstr "Przeciągnij i upuść widget do paska bocznego."
 
 #: ../random-image-gallery-with-fancy-zoom.php:203
 msgid "Add the images in the posts or pages using short code."
-msgstr ""
+msgstr "Dodaj obrazy w słupkach lub stron za pomocą krótkiego kodu."
 
 #: ../random-image-gallery-with-fancy-zoom.php:205
 #: ../random-image-gallery-with-fancy-zoom.php:216
 msgid "Check official website for more information"
-msgstr ""
+msgstr "Sprawdzić oficjalną stronę internetową, aby uzyskać więcej informacji"
 
 #: ../random-image-gallery-with-fancy-zoom.php:206
 #: ../random-image-gallery-with-fancy-zoom.php:217
 msgid "click here"
-msgstr ""
+msgstr "kliknij tutaj"
 
 #: ../random-image-gallery-with-fancy-zoom.php:214
-msgid "message ticker"
-msgstr ""
-
 #: ../random-image-gallery-with-fancy-zoom.php:224
 #: ../random-image-gallery-with-fancy-zoom.php:229
 #: ../random-image-gallery-with-fancy-zoom.php:245
 #: ../random-image-gallery-with-fancy-zoom.php:246
 msgid "FancyZoom images"
-msgstr ""
+msgstr "Obrazy FancyZoom"
+
+#~ msgid "message ticker"
+#~ msgstr "Komunikat giełdowy"

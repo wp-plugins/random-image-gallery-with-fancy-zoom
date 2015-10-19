@@ -4,11 +4,13 @@ Plugin Name: Random image gallery with fancy zoom
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Description: This plug-in which allows you to simply and easily show random image anywhere in your template files or using widgets with onclick JQuery fancy zoom effect. 
 Author: Gopi Ramasamy
-Version: 9.7
+Version: 9.8
 Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Donate link: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: random-image-gallery-with-fancy-zoom
+Domain Path: /languages
 */
 
 function rigwfz_show() 
@@ -59,7 +61,7 @@ function rigwfz_shortcode( $atts )
 	
 	if(!is_dir($img_folder))
 	{
-		$rigwfz = __('Image folder does not exists', 'random-image-gallery');
+		$rigwfz = __('Image folder does not exists', 'random-image-gallery-with-fancy-zoom');
 		return $rigwfz;
 	}
 
@@ -114,7 +116,7 @@ function rigwfz_shortcode( $atts )
 	}
 	else
 	{
-		$rigwfz = __('No image found in the folder', 'random-image-gallery');
+		$rigwfz = __('No image found in the folder', 'random-image-gallery-with-fancy-zoom');
 	}
 	return $rigwfz;	
 }
@@ -141,8 +143,8 @@ function rigwfz_admin_option()
 	<div class="wrap">
 		<div class="form-wrap">
 			<div id="icon-edit" class="icon32 icon32-posts-post"></div>
-			<h2><?php _e('Random image gallery with fancy zoom', 'random-image-gallery'); ?></h2>
-			<h3><?php _e('Settings', 'random-image-gallery'); ?></h3>
+			<h2><?php _e('Random image gallery with fancy zoom', 'random-image-gallery-with-fancy-zoom'); ?></h2>
+			<h3><?php _e('Settings', 'random-image-gallery-with-fancy-zoom'); ?></h3>
 			<?php
 			$rigwfz_title = get_option('rigwfz_title');
 			$rigwfz_width = get_option('rigwfz_width');
@@ -161,49 +163,49 @@ function rigwfz_admin_option()
 				update_option('rigwfz_title_yes', $rigwfz_title_yes );	
 				?>
 				<div class="updated fade">
-					<p><strong><?php _e('Details successfully updated.', 'random-image-gallery'); ?></strong></p>
+					<p><strong><?php _e('Details successfully updated.', 'random-image-gallery-with-fancy-zoom'); ?></strong></p>
 				</div>
 				<?php
 			}
 			?>
 			<form name="rigwfz_form" method="post" action="">
 			
-			<label for="tag-title"><?php _e('Enter widget title', 'random-image-gallery'); ?></label>
+			<label for="tag-title"><?php _e('Enter widget title', 'random-image-gallery-with-fancy-zoom'); ?></label>
 			<input name="rigwfz_title" id="rigwfz_title" type="text" value="<?php echo $rigwfz_title; ?>" size="50" maxlength="150" />
-			<p><?php _e('Please enter your widget title.', 'random-image-gallery'); ?></p>
+			<p><?php _e('Please enter your widget title.', 'random-image-gallery-with-fancy-zoom'); ?></p>
 			
-			<label for="tag-title"><?php _e('Width', 'random-image-gallery'); ?></label>
+			<label for="tag-title"><?php _e('Width', 'random-image-gallery-with-fancy-zoom'); ?></label>
 			<input name="rigwfz_width" id="rigwfz_width" type="text" value="<?php echo $rigwfz_width; ?>" maxlength="3" />
-			<p><?php _e('Please enter your image width.', 'random-image-gallery'); ?></p>
+			<p><?php _e('Please enter your image width.', 'random-image-gallery-with-fancy-zoom'); ?></p>
 			
-			<label for="tag-title"><?php _e('Sidebar title display', 'random-image-gallery'); ?></label>
+			<label for="tag-title"><?php _e('Sidebar title display', 'random-image-gallery-with-fancy-zoom'); ?></label>
 			<select name="rigwfz_title_yes" id="rigwfz_title_yes">
 				<option value='YES'  <?php if($rigwfz_title_yes == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 				<option value='NO' <?php if($rigwfz_title_yes == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 			</select>
-			<p><?php _e('Do you want to show title on your sidebar? This option is only for widget.', 'random-image-gallery'); ?></p>
+			<p><?php _e('Do you want to show title on your sidebar? This option is only for widget.', 'random-image-gallery-with-fancy-zoom'); ?></p>
 			
-			<label for="tag-title"><?php _e('Image directory', 'random-image-gallery'); ?></label>
+			<label for="tag-title"><?php _e('Image directory', 'random-image-gallery-with-fancy-zoom'); ?></label>
 			<input name="rigwfz_dir" id="rigwfz_dir" type="text" value="<?php echo $rigwfz_dir; ?>" size="100" maxlength="150" />
-			<p><?php _e('Please enter your image directory. In which directory you have all your images?', 'random-image-gallery'); ?>
+			<p><?php _e('Please enter your image directory. In which directory you have all your images?', 'random-image-gallery-with-fancy-zoom'); ?>
 			(Ex: wp-content/plugins/random-image-gallery-with-fancy-zoom/random-gallery/)
 			</p>
 			
 			<p style="padding-top:8px;">
-				<input name="rigwfz_submit" id="rigwfz_submit" class="button" value="<?php _e('Submit', 'random-image-gallery'); ?>" type="submit" />
+				<input name="rigwfz_submit" id="rigwfz_submit" class="button" value="<?php _e('Submit', 'random-image-gallery-with-fancy-zoom'); ?>" type="submit" />
 				<input type="hidden" name="rigwfz_form_submit" value="yes"/>
 				<?php wp_nonce_field('rigwfz_form_setting'); ?>
 			</p>
 			</form>
 		</div>
-		<h3><?php _e('Plugin configuration option', 'random-image-gallery'); ?></h3>
+		<h3><?php _e('Plugin configuration option', 'random-image-gallery-with-fancy-zoom'); ?></h3>
 		<ol>
-			<li><?php _e('Add directly in to the theme using PHP code.', 'random-image-gallery'); ?></li>
-			<li><?php _e('Drag and drop the widget to your sidebar.', 'random-image-gallery'); ?></li>
-			<li><?php _e('Add the images in the posts or pages using short code.', 'random-image-gallery'); ?></li>
+			<li><?php _e('Add directly in to the theme using PHP code.', 'random-image-gallery-with-fancy-zoom'); ?></li>
+			<li><?php _e('Drag and drop the widget to your sidebar.', 'random-image-gallery-with-fancy-zoom'); ?></li>
+			<li><?php _e('Add the images in the posts or pages using short code.', 'random-image-gallery-with-fancy-zoom'); ?></li>
 		</ol>
-		<p class="description"><?php _e('Check official website for more information', 'random-image-gallery'); ?> 
-		<a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/"><?php _e('click here', 'random-image-gallery'); ?></a></p>
+		<p class="description"><?php _e('Check official website for more information', 'random-image-gallery-with-fancy-zoom'); ?> 
+		<a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/"><?php _e('click here', 'random-image-gallery-with-fancy-zoom'); ?></a></p>
 	</div>
 	<?php
 }
@@ -211,22 +213,22 @@ function rigwfz_admin_option()
 function rigwfz_control()
 {
 	echo '<p><b>';
-	_e('FancyZoom images', 'random-image-gallery');
+	_e('FancyZoom images', 'random-image-gallery-with-fancy-zoom');
 	echo '.</b> ';
-	_e('Check official website for more information', 'random-image-gallery');
-	?> <a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/"><?php _e('click here', 'random-image-gallery'); ?></a></p><?php
+	_e('Check official website for more information', 'random-image-gallery-with-fancy-zoom');
+	?> <a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/"><?php _e('click here', 'random-image-gallery-with-fancy-zoom'); ?></a></p><?php
 }
 
 function rigwfz_widget_init() 
 {
 	if(function_exists('wp_register_sidebar_widget')) 	
 	{
-		wp_register_sidebar_widget('rigwfz', __('FancyZoom images', 'random-image-gallery'), 'rigwfz_widget');
+		wp_register_sidebar_widget('rigwfz', __('FancyZoom images', 'random-image-gallery-with-fancy-zoom'), 'rigwfz_widget');
 	}
 	
 	if(function_exists('wp_register_widget_control')) 	
 	{
-		wp_register_widget_control('rigwfz', array( __('FancyZoom images', 'random-image-gallery'), 'widgets'), 'rigwfz_control');
+		wp_register_widget_control('rigwfz', array( __('FancyZoom images', 'random-image-gallery-with-fancy-zoom'), 'widgets'), 'rigwfz_control');
 	} 
 }
 
@@ -242,8 +244,8 @@ function rigwfz_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page( __('FancyZoom images', 'random-image-gallery'), 
-				__('FancyZoom images', 'random-image-gallery'), 'manage_options', 'random-image-gallery-with-fancy-zoom', 'rigwfz_admin_option' );
+		add_options_page( __('FancyZoom images', 'random-image-gallery-with-fancy-zoom'), 
+				__('FancyZoom images', 'random-image-gallery-with-fancy-zoom'), 'manage_options', 'random-image-gallery-with-fancy-zoom', 'rigwfz_admin_option' );
 	}
 }
 
@@ -258,7 +260,7 @@ function rigwfz_add_javascript_files()
 
 function rigwfz_textdomain() 
 {
-	  load_plugin_textdomain( 'random-image-gallery', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	  load_plugin_textdomain( 'random-image-gallery-with-fancy-zoom', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 add_action('plugins_loaded', 'rigwfz_textdomain');

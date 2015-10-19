@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fa
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
 Tags: Random, image, gallery, fancy, zoom
 Requires at least: 3.4
-Tested up to: 4.3
-Stable tag: 9.7
+Tested up to: 4.3.1
+Stable tag: 9.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -45,6 +45,11 @@ Add directly in the theme : Use this code `<?php if (function_exists (rigwfz_sho
 Method 3
 
 Short code for posts and pages: Copy and paste the given short code into pages or posts. `[random-fanzy-zoom]`
+
+= Translators =
+
+* English (en_EN) - [Gopi Ramasamy](http://www.gopiplus.com/)
+* Polish (pl_PL) - [Abdul Sattar](https://www.couponmachine.in/)
 
 == Installation ==
 
@@ -151,6 +156,11 @@ Plugin *.po file (random-image-gallery.po) available in the languages folder.
 
 1. Tested up to 4.3
 
+= 9.8 =	
+
+1. Tested up to 4.3.1
+2. Text Domain slug has been added for Language Packs.
+
 == Changelog ==
 
 = 1.0 =
@@ -229,3 +239,8 @@ Plugin *.po file (random-image-gallery.po) available in the languages folder.
 = 9.7 =	
 
 1. Tested up to 4.3
+
+= 9.8 =	
+
+1. Tested up to 4.3.1
+2. Text Domain slug has been added for Language Packs.

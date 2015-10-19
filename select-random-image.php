@@ -2,7 +2,7 @@
 
 /**
  *     Random image gallery with fancy zoom
- *     Copyright (C) 2011 - 2014 www.gopiplus.com
+ *     Copyright (C) 2011 - 2015 www.gopiplus.com
  *     http://www.gopiplus.com/work/2010/07/18/random-image-gallery-with-fancy-zoom/
  * 
  *     This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ mt_srand((double)microtime()*1000);
 
 if(!is_dir($img_folder))
 {
-	_e('Image folder does not exists', 'random-image-gallery');
+	_e('Image folder does not exists', 'random-image-gallery-with-fancy-zoom');
 	return true;
 }
 //use the directory class
@@ -76,6 +76,6 @@ if($no >= 0)
 }
 else
 {
-	_e('No image found in the folder', 'random-image-gallery');
+	_e('No image found in the folder', 'random-image-gallery-with-fancy-zoom');
 }
  ?>
